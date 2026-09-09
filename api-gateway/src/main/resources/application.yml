@@ -1,0 +1,42 @@
+server:
+  port: 9000
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        # 1. Ruta pentru Microserviciul Utilizatori
+        - id: utilizatori-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/utilizatori/**
+
+        # 2. Ruta pentru Microserviciul Zboruri
+        - id: zboruri-service
+          uri: http://localhost:8080
+          predicates:
+            - Path=/api/zboruri/**
+
+        # 3. Ruta pentru Microserviciul Bilete
+        - id: bilete-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/bilete/**
+
+        # 4. Ruta pentru Microserviciul Export
+        - id: export-service
+          uri: http://localhost:8083
+          predicates:
+            - Path=/api/export/**
+
+        # 5. Ruta pentru Microserviciul Statistici (NOU)
+        - id: statistici-service
+          uri: http://localhost:8084
+          predicates:
+            - Path=/api/statistici/**
+
+        # 6. Ruta pentru Microserviciul Notificari
+        - id: notificari-service
+          uri: http://localhost:8085
+          predicates:
+            - Path=/api/notificari/**

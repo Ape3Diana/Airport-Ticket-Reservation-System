@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="700.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.aeroport.view.AdminDashboardView">
+
+    <left>
+        <VBox spacing="10" style="-fx-background-color: #2c3e50;" prefWidth="200.0">
+            <padding>
+                <Insets top="20" right="10" bottom="20" left="10"/>
+            </padding>
+            <Label text="%admin.menu.title" textFill="WHITE" wrapText="true">
+                <font><Font name="System Bold" size="16.0" /></font>
+                <VBox.margin><Insets bottom="20"/></VBox.margin>
+            </Label>
+
+            <Button text="%admin.menu.flights" onAction="#onNavZboruri" maxWidth="Infinity"
+                    style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-font-size: 14px;"/>
+            <Button text="%admin.menu.users" onAction="#onNavUtilizatori" maxWidth="Infinity"
+                    style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-font-size: 14px;"/>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="adminContentArea" style="-fx-background-color: #ecf0f1;"/>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,9 @@
+Număr Zbor,Plecare,Sosire,Data/Ora Decolare,Data/Ora Aterizare,Preț (EUR),Locuri Disponibile
+RO301,Henri Coanda (OTP),Heathrow (LHR),2026-04-15 11:30,2026-04-15 13:15,150.5,82
+RO302,Heathrow (LHR),Henri Coanda (OTP),2026-04-18 14:30,2026-04-18 19:30,175.0,60
+W63301,Avram Iancu (CLJ),Charles de Gaulle (CDG),2026-04-20 09:00,2026-04-20 11:00,89.99,2
+W63302,Charles de Gaulle (CDG),Avram Iancu (CLJ),2026-04-22 12:00,2026-04-22 16:00,110.0,0
+LH1423,Henri Coanda (OTP),Frankfurt Airport (FRA),2026-04-16 17:00,2026-04-16 18:30,200.0,72
+LH234,Frankfurt Airport (FRA),Leonardo da Vinci (FCO),2026-04-16 20:00,2026-04-16 21:45,120.0,45
+RO303,Henri Coanda (OTP),Heathrow (LHR),2026-04-16 11:30,2026-04-16 13:15,450.0,0
+RO305,Henri Coanda (OTP),Heathrow (LHR),2026-04-15 21:45,2026-04-15 23:30,195.0,78

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.aeroport.view.MainContainerView"
+            prefHeight="700.0" prefWidth="1000.0">
+
+    <top>
+        <VBox spacing="5">
+            <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-background-color: #3c3f41; -fx-padding: 10;">
+
+                <HBox fx:id="loginBox" spacing="10" alignment="CENTER_LEFT">
+                    <Label fx:id="lblEmail" text="%login.email" textFill="WHITE"/>
+                    <TextField fx:id="emailField" promptText="example@mail.com" prefWidth="150"/>
+
+                    <Label fx:id="lblParola" text="%login.password" textFill="WHITE"/>
+                    <PasswordField fx:id="parolaField" prefWidth="120"/>
+
+                    <Button fx:id="btnLogin" text="%login.button" onAction="#handleLogin"
+                            style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+                </HBox>
+
+                <HBox fx:id="userBox" spacing="15" alignment="CENTER_LEFT">
+                    <Label fx:id="lblUserInfo" textFill="WHITE" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+                    <Button fx:id="btnLogout" text="%header.logout" onAction="#handleLogout"
+                            style="-fx-background-color: #e74c3c; -fx-text-fill: white;"/>
+                </HBox>
+
+                <Region HBox.hgrow="ALWAYS" />
+
+                <Label fx:id="lblLimba" text="%lang.label" textFill="WHITE"/>
+                <ComboBox fx:id="langCombo" onAction="#handleLanguageChange" prefWidth="120"/>
+            </HBox>
+
+            <Label fx:id="statusLabel" style="-fx-padding: 0 10 5 10; -fx-text-fill: #e74c3c; -fx-font-weight: bold;"/>
+            <Separator />
+        </VBox>
+    </top>
+
+    <center>
+        <StackPane fx:id="contentArea">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+        </StackPane>
+    </center>
+</BorderPane>

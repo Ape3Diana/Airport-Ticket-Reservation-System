@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToWidth="true" prefHeight="650.0" prefWidth="950.0" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.aeroport.view.ManagerStatsView">
+    <content>
+        <VBox spacing="25.0">
+            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+            <HBox alignment="CENTER_LEFT" spacing="15">
+                <Label text="%manager.stats.title" textFill="#2c3e50">
+                    <font><Font name="System Bold" size="20.0" /></font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="%manager.stats.btn.refresh" onAction="#onRefreshStats"
+                        style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+            <Separator/>
+
+            <VBox spacing="30">
+
+                <VBox style="-fx-background-color: white; -fx-padding: 15; -fx-border-color: #bdc3c7; -fx-border-radius: 5; -fx-background-radius: 5;">
+                    <Label text="%manager.stats.revenue.title" style="-fx-font-weight: bold; -fx-font-size: 14px;" textFill="#34495e"/>
+                    <BarChart fx:id="chartVenituri" prefHeight="300" animated="false">
+                        <xAxis><CategoryAxis side="BOTTOM" fx:id="axisVenituriZboruri" /></xAxis>
+                        <yAxis><NumberAxis side="LEFT" label="EUR" /></yAxis>
+                    </BarChart>
+                </VBox>
+
+                <HBox spacing="20">
+                    <VBox HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-padding: 15; -fx-border-color: #bdc3c7; -fx-border-radius: 5; -fx-background-radius: 5;">
+                        <Label text="%manager.stats.occupancy.title" style="-fx-font-weight: bold; -fx-font-size: 14px;" textFill="#34495e"/>
+                        <BarChart fx:id="chartOcupare" prefHeight="300" animated="false">
+                            <xAxis><CategoryAxis side="BOTTOM" fx:id="axisOcupareZboruri" /></xAxis>
+                            <yAxis><NumberAxis side="LEFT" label="%manager.stats.axis.percentage" lowerBound="0" upperBound="100" autoRanging="false" /></yAxis>
+                        </BarChart>
+                    </VBox>
+
+                    <VBox prefWidth="400" style="-fx-background-color: white; -fx-padding: 15; -fx-border-color: #bdc3c7; -fx-border-radius: 5; -fx-background-radius: 5;">
+                        <Label text="%manager.stats.destinations.title" style="-fx-font-weight: bold; -fx-font-size: 14px;" textFill="#34495e"/>
+                        <PieChart fx:id="chartDestinatii" prefHeight="300" animated="false"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </VBox>
+    </content>
+</ScrollPane>

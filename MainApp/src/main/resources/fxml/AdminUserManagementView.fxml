@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15.0" prefHeight="650.0" prefWidth="900.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.aeroport.view.AdminUserManagementView">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 15; -fx-border-color: #bdc3c7; -fx-border-radius: 5; -fx-background-radius: 5;">
+        <Label text="%admin.user.details" textFill="#2c3e50">
+            <font><Font name="System Bold" size="14.0" /></font>
+        </Label>
+
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                <Label text="%admin.user.name"/>
+                <TextField fx:id="txtNumeComplet" promptText="%admin.user.prompt.name"/>
+            </VBox>
+            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                <Label text="%admin.user.email"/>
+                <TextField fx:id="txtEmail" promptText="%admin.user.prompt.email"/>
+            </VBox>
+            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                <Label text="%admin.user.phone"/>
+                <TextField fx:id="txtTelefon" promptText="%admin.user.prompt.phone"/>
+            </VBox>
+        </HBox>
+
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                <Label text="%admin.user.password"/>
+                <TextField fx:id="txtParola" promptText="%admin.user.prompt.password"/>
+            </VBox>
+            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                <Label text="%admin.user.role"/>
+                <ComboBox fx:id="comboRol" maxWidth="Infinity"/>
+            </VBox>
+        </HBox>
+    </VBox>
+
+    <HBox spacing="15" alignment="CENTER_LEFT">
+        <Label text="%admin.user.filter">
+            <font><Font name="System Bold" size="12.0" /></font>
+        </Label>
+        <ComboBox fx:id="comboFiltruRol" prefWidth="150"/>
+        <Region HBox.hgrow="ALWAYS" />
+        <Button text="%admin.user.export" onAction="#onExportCsv" style="-fx-background-color: #607D8B; -fx-text-fill: white;"/>
+    </HBox>
+
+    <TableView fx:id="tblUtilizatori" VBox.vgrow="ALWAYS" style="-fx-border-color: #bdc3c7;">
+        <columns>
+            <TableColumn fx:id="colNume" text="%admin.user.col.name" prefWidth="200"/>
+            <TableColumn fx:id="colEmail" text="%admin.user.col.email" prefWidth="200"/>
+            <TableColumn fx:id="colParola" text="%admin.user.col.password" prefWidth="120"/>
+            <TableColumn fx:id="colTelefon" text="%admin.user.col.phone" prefWidth="150"/>
+            <TableColumn fx:id="colRol" text="%admin.user.col.role" prefWidth="150"/>
+            <TableColumn fx:id="colDataCreare" text="%admin.user.col.date" prefWidth="140"/>
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+    </TableView>
+
+    <HBox spacing="15" alignment="CENTER_RIGHT">
+        <Label fx:id="lblStatus" textFill="#27ae60" HBox.hgrow="ALWAYS">
+            <HBox.margin><Insets right="20"/></HBox.margin>
+        </Label>
+        <Button text="%admin.user.btn.new" onAction="#onClearForm" style="-fx-background-color: #95a5a6; -fx-text-fill: white;"/>
+        <Button text="%admin.user.btn.delete" onAction="#onDelete" style="-fx-background-color: #e74c3c; -fx-text-fill: white;"/>
+        <Button fx:id="btnSave" text="%admin.user.btn.save" onAction="#onSave" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold;"/>
+    </HBox>
+</VBox>

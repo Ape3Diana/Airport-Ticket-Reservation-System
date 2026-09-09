@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15.0" prefHeight="650.0" prefWidth="950.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.aeroport.view.ManagerFlightManagementView">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <VBox spacing="12" style="-fx-background-color: #d1e1ed; -fx-padding: 12; -fx-border-radius: 5; -fx-background-radius: 5;">
+
+        <HBox spacing="12" alignment="BOTTOM_LEFT">
+
+            <VBox spacing="5">
+                <Label text="%flight.from" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="txtCautaPlecare" prefWidth="120"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="%flight.to" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="txtCautaSosire" prefWidth="120"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="%flight.date" style="-fx-font-weight: bold;"/>
+                <DatePicker fx:id="dpCautaData" prefWidth="120"/>
+            </VBox>
+
+            <Button text="%flight.search" onAction="#onCautaZboruri" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            <Button text="%employee.btn.all_flights" onAction="#onArataToateZborurile" style="-fx-background-color: #7f8c8d; -fx-text-fill: white;"/>
+
+            <Region HBox.hgrow="ALWAYS" />
+
+            <VBox spacing="5">
+                <Label text="%manager.flight.search_number" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="txtCautaNumar" promptText="Ex: RO321" prefWidth="110"/>
+            </VBox>
+            <Button text="%manager.flight.btn.filter" onAction="#onFiltreazaNumar" style="-fx-background-color: #8e44ad; -fx-text-fill: white;"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <Label text="%export.format.label" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;">
+                <HBox.margin><Insets top="5"/></HBox.margin>
+            </Label>
+            <ComboBox fx:id="cmbExportFormat" prefWidth="100" style="-fx-background-color: white; -fx-border-color: #bdc3c7;"/>
+            <Button text="%manager.export.btn" onAction="#onExportData"
+                    style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </HBox>
+    </VBox>
+
+    <GridPane hgap="15" vgap="10" style="-fx-background-color: white; -fx-padding: 15; -fx-border-color: #bdc3c7; -fx-border-radius: 5; -fx-background-radius: 5;">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+
+        <Label text="%manager.flight.details" style="-fx-font-weight: bold;" GridPane.columnSpan="3"/>
+
+        <VBox spacing="5" GridPane.rowIndex="1">
+            <Label text="%manager.flight.number"/><TextField fx:id="txtNumarZbor"/>
+        </VBox>
+        <VBox spacing="5" GridPane.rowIndex="1" GridPane.columnIndex="1">
+            <Label text="%manager.flight.from"/><ComboBox fx:id="comboPlecare" maxWidth="Infinity"/>
+        </VBox>
+        <VBox spacing="5" GridPane.rowIndex="1" GridPane.columnIndex="2">
+            <Label text="%manager.flight.to"/><ComboBox fx:id="comboSosire" maxWidth="Infinity"/>
+        </VBox>
+
+        <VBox spacing="5" GridPane.rowIndex="2">
+            <Label text="%manager.flight.date"/><DatePicker fx:id="dpDataZbor" maxWidth="Infinity"/>
+        </VBox>
+        <VBox spacing="5" GridPane.rowIndex="2" GridPane.columnIndex="1">
+            <Label text="%manager.flight.dep_time"/><TextField fx:id="txtOraPlecare"/>
+        </VBox>
+        <VBox spacing="5" GridPane.rowIndex="2" GridPane.columnIndex="2">
+            <Label text="%manager.flight.arr_time"/><TextField fx:id="txtOraSosire"/>
+        </VBox>
+
+        <VBox spacing="5" GridPane.rowIndex="3">
+            <Label text="%manager.flight.price"/><TextField fx:id="txtPret"/>
+        </VBox>
+        <VBox spacing="5" GridPane.rowIndex="3" GridPane.columnIndex="1">
+            <Label text="%manager.flight.seats"/><TextField fx:id="txtLocuri"/>
+        </VBox>
+
+        <HBox spacing="10" alignment="BOTTOM_RIGHT" GridPane.rowIndex="4" GridPane.columnSpan="3">
+            <Button text="%manager.flight.btn.new" onAction="#onClearForm" style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-padding: 5 15;"/>
+            <Button text="%manager.flight.btn.delete" onAction="#onDelete" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-padding: 5 15;"/>
+            <Button text="%manager.flight.btn.save" onAction="#onSave" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 5 15;"/>
+        </HBox>
+    </GridPane>
+
+    <TableView fx:id="tblZboruri" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colNrZbor" text="%manager.flight.number" />
+            <TableColumn fx:id="colPlecare" text="%manager.flight.from" />
+            <TableColumn fx:id="colSosire" text="%manager.flight.to" />
+            <TableColumn fx:id="colOraPlecare" text="%manager.flight.dep_time" />
+            <TableColumn fx:id="colOraSosire" text="%manager.flight.arr_time" />
+            <TableColumn fx:id="colPret" text="%manager.flight.price" />
+            <TableColumn fx:id="colLocuri" text="%manager.flight.seats" />
+        </columns>
+        <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>
+    </TableView>
+
+    <Label fx:id="lblStatus" textFill="#27ae60" style="-fx-font-weight: bold;" />
+</VBox>

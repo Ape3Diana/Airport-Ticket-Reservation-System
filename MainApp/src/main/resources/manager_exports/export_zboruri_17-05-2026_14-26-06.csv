@@ -1,0 +1,16 @@
+Număr Zbor,Plecare,Sosire,Data/Ora Decolare,Data/Ora Aterizare,Preț (EUR),Locuri Disponibile
+RO301,Henri Coanda (OTP),Charles de Gaulle (CDG),2026-06-01 11:00,2026-06-01 13:30,200.0,80
+W63301,Avram Iancu (CLJ),Charles de Gaulle (CDG),2026-06-02 12:15,2026-06-02 14:00,100.0,75
+BA102,Henri Coanda (OTP),Heathrow (LHR),2026-06-03 17:00,2026-06-03 18:30,300.0,0
+LH142,Frankfurt Airport (FRA),Heathrow (LHR),2026-06-04 14:00,2026-06-04 15:45,250.0,86
+RO505,Charles de Gaulle (CDG),Henri Coanda (OTP),2026-06-05 21:00,2026-06-06 00:00,150.0,90
+AZ220,Heathrow (LHR),Leonardo da Vinci (FCO),2026-06-06 10:30,2026-06-06 13:00,500.0,89
+IB303,Henri Coanda (OTP),Barajas (MAD),2026-06-07 22:20,2026-06-08 01:15,120.0,1
+RO999,Avram Iancu (CLJ),Frankfurt Airport (FRA),2026-06-08 16:00,2026-06-08 17:10,80.0,45
+W6777,Leonardo da Vinci (FCO),Barajas (MAD),2026-06-09 13:00,2026-06-09 15:30,90.0,78
+RO202,Frankfurt Airport (FRA),Charles de Gaulle (CDG),2026-06-10 18:00,2026-06-10 19:20,130.0,45
+RO309,Henri Coanda (OTP),Charles de Gaulle (CDG),2026-06-01 17:30,2026-06-01 20:00,220.0,40
+AF112,Henri Coanda (OTP),Charles de Gaulle (CDG),2026-06-01 23:00,2026-06-02 01:30,180.0,70
+RO411,Henri Coanda (OTP),Barajas (MAD),2026-06-07 09:45,2026-06-07 12:40,140.0,5
+LH882,Avram Iancu (CLJ),Frankfurt Airport (FRA),2026-06-08 21:00,2026-06-08 22:10,95.0,80
+RO305,Henri Coanda (OTP),Heathrow (LHR),2026-04-15 21:45,2026-04-15 23:30,195.0,78

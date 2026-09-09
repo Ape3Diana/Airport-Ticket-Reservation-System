@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="10.0" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aeroport.view.UnauthenticatedFlightView">
+    <padding>
+        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+    </padding>
+
+    <HBox alignment="BOTTOM_LEFT" spacing="15.0"> <children>
+        <VBox spacing="5.0">
+            <Label text="%flight.from" />
+            <TextField fx:id="txtPlecare" promptText="Bucuresti" />
+        </VBox>
+
+        <VBox spacing="5.0">
+            <Label text="%flight.to" />
+            <TextField fx:id="txtSosire" promptText="Londra" />
+        </VBox>
+
+        <VBox spacing="5.0">
+            <Label text="%flight.date" />
+            <DatePicker fx:id="dpData" />
+        </VBox>
+
+        <Button mnemonicParsing="false" onAction="#onCautaClick" prefHeight="30.0" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="%flight.search">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Button>
+    </children>
+    </HBox>
+
+    <Label fx:id="lblEroare" managed="false" visible="false" textFill="#d32f2f">
+        <font>
+            <Font name="System Italic" size="12.0" />
+        </font>
+    </Label>
+
+    <TableView fx:id="tblZboruri" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colNrZbor" prefWidth="80.0" text="%flight.column.number" />
+            <TableColumn fx:id="colPlecare" prefWidth="180.0" text="%flight.column.departure" />
+            <TableColumn fx:id="colSosire" prefWidth="180.0" text="%flight.column.arrival" />
+            <TableColumn fx:id="colOraPlecare" prefWidth="100.0" text="%flight.column.departure_time" />
+            <TableColumn fx:id="colOraSosire" prefWidth="100.0" text="%flight.column.arrival_time" />
+            <TableColumn fx:id="colPret" prefWidth="80.0" text="%flight.column.price" />
+            <TableColumn fx:id="colLocuri" prefWidth="100.0" text="%flight.column.seats" />
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+        </columnResizePolicy>
+    </TableView>
+
+</VBox>
